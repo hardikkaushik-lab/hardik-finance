@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MONEY & MATTE — The world, through the lens of money.</title>
+<meta name="description" content="MONEY & MATTE — a visual finance and economics journal connecting markets, geopolitics and everyday life.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--ink:#0b0b0d;--paper:#eee7d7;--paper2:#d8cdb9;--gold:#c9a45c;--red:#7e2222;--muted:#a9a093;--line:#665c4d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:"DM Mono",monospace;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.04;background-image:radial-gradient(#fff .6px,transparent .6px);background-size:5px 5px;z-index:20}
+a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}
+.top{border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.15em;color:var(--muted);padding:10px 0;display:flex;justify-content:space-between}
+nav{position:sticky;top:0;z-index:15;background:rgba(11,11,13,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navin{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:"Playfair Display",serif;font-size:28px;letter-spacing:.12em;font-weight:800}.brand span{color:var(--gold)}
+.links{display:flex;gap:25px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.links a:hover{color:var(--gold)}
+.hero{min-height:700px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px;position:relative}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #4d463d;right:-160px;top:80px;transform:rotate(45deg);opacity:.5;pointer-events:none}
+.kicker{color:var(--gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-family:"Playfair Display",serif;font-size:clamp(62px,8vw,112px);line-height:.86;margin:22px 0;letter-spacing:-.045em}h1 em{font-weight:600;color:var(--paper2)}
+.hero p{font-size:14px;line-height:1.8;color:#bdb4a8;max-width:650px}.cta{display:inline-flex;border:1px solid var(--gold);padding:14px 20px;margin-top:22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.cta:hover{background:var(--gold);color:var(--ink)}
+.orb{height:410px;position:relative;display:grid;place-items:center}.ring{width:330px;height:330px;border:1px solid var(--gold);border-radius:50%;position:absolute;animation:spin 30s linear infinite}.ring:before,.ring:after{content:"";position:absolute;inset:22px;border:1px solid #5b5144;border-radius:50%}.ring:after{inset:62px;border-style:dashed}
+.bat{width:170px;height:92px;position:relative;filter:drop-shadow(0 0 18px rgba(201,164,92,.18))}.bat:before,.bat:after{content:"";position:absolute;top:18px;width:90px;height:58px;background:var(--paper);border-radius:70% 10% 80% 15%;clip-path:polygon(0 18%,18% 35%,29% 0,45% 28%,50% 22%,55% 28%,71% 0,82% 35%,100% 18%,80% 72%,60% 100%,50% 76%,40% 100%,20% 72%)}.bat:before{left:0;transform:scaleX(-1)}.bat:after{right:0}.stamp{position:absolute;bottom:0;border:1px solid #5b5144;padding:8px 12px;color:var(--muted);font-size:9px;letter-spacing:.18em}
+section{padding:95px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.2em}.sectionhead h2{font-family:"Playfair Display",serif;font-size:48px;margin:8px 0 0}.note{color:var(--muted);font-size:11px;max-width:420px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid #514a40;background:linear-gradient(145deg,#111115,#0b0b0d);padding:25px;min-height:260px;position:relative;overflow:hidden}.card:after{content:"✦";position:absolute;right:16px;top:10px;color:#3f392f;font-size:50px}.tag{color:var(--gold);font-size:9px;letter-spacing:.18em}.card h3{font-family:"Playfair Display",serif;font-size:27px;margin:18px 0 12px}.card p{color:#aaa197;font-size:11px;line-height:1.75}.arrow{position:absolute;bottom:20px;color:var(--paper);font-size:12px}
+.compare{background:var(--paper);color:var(--ink);padding:30px;border:1px solid #8f8069}.comparetop{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #988b78;padding-bottom:18px}.compare h3{font-family:"Playfair Display";font-size:36px;margin:0}.switch{display:flex;gap:8px}.pill{border:1px solid #8f8069;padding:8px 12px;font-size:9px;letter-spacing:.12em;background:transparent;color:var(--ink);cursor:pointer;position:relative;z-index:3;font-family:"DM Mono",monospace}.pill:hover{background:#d8cdb9}.pill:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.pill.active{background:var(--ink);color:var(--paper)}
+.bars{display:grid;gap:22px;margin-top:30px}.barrow{display:grid;grid-template-columns:160px 1fr 90px;gap:14px;align-items:center;font-size:10px}.track{height:16px;background:#cfc3ae}.fill{height:100%;background:var(--ink);width:var(--w)}.fill.alt{background:var(--red)}.metric{font-family:"Playfair Display";font-size:21px;text-align:right}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:center}.node{appearance:none;-webkit-appearance:none;font:inherit;color:var(--paper);border:1px solid #514a40;padding:22px 12px;text-align:center;background:#101015;color:var(--paper);font:inherit;cursor:pointer;min-height:115px;display:grid;place-items:center;width:100%;appearance:none;-webkit-appearance:none}.node:hover,.node.active{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(201,164,92,.18),0 10px 28px rgba(0,0,0,.25)}.node strong{font-family:"Playfair Display";font-size:20px}.node span{color:var(--muted);font-size:9px}.connector{color:var(--gold);text-align:center}.explain{margin-top:20px;position:relative;border-left:2px solid var(--gold);padding:20px;background:#111115;color:#b8aea1;font-size:12px;line-height:1.8;transition:transform .2s,box-shadow .2s}.explain.flash{transform:translateX(4px);box-shadow:0 0 24px rgba(201,164,92,.12)}
+.dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{border:1px solid #514a40;padding:20px;background:#101015}.stat small{color:var(--muted);font-size:9px;letter-spacing:.15em}.stat b{font-family:"Playfair Display";display:block;font-size:31px;margin:12px 0}.up{color:#d6b870}.down{color:#c98989}
+.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;white-space:nowrap;color:#b9afa2;font-size:10px;letter-spacing:.12em}.ticker span{margin-right:40px}
+footer{padding:60px 0;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:1.8}.footbrand{font-family:"Playfair Display";font-size:28px;color:var(--paper);letter-spacing:.1em}
+@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:850px){.hero{grid-template-columns:1fr;min-height:auto;padding:90px 0}.orb{display:none}.cards{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.connector{transform:rotate(90deg)}.dashboard{grid-template-columns:1fr 1fr}.links{display:none}.sectionhead{display:block}.hero:after{display:none}.barrow{grid-template-columns:100px 1fr 70px}}
+
+.node:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.node.active{box-shadow:inset 0 0 0 1px var(--gold),0 0 24px rgba(201,164,92,.08)}
+.explain:before{content:attr(data-step);display:block;color:var(--gold);font-size:9px;letter-spacing:.18em;margin-bottom:8px}.explain.flash{animation:explainFlash .45s ease}
+@keyframes explainFlash{0%{transform:translateY(4px);opacity:.55}100%{transform:translateY(0);opacity:1}}
+
+.article-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+.feature{border:1px solid #514a40;background:#111115;padding:32px;position:relative}
+.feature h3{font-family:"Playfair Display";font-size:36px;margin:12px 0}.feature p{font-family:"Libre Baskerville",serif;color:#bcb3a7;font-size:13px;line-height:1.9}
+.feature .big{font-family:"Playfair Display";font-size:58px;color:var(--gold);line-height:1}
+.side{border:1px solid #514a40;background:#0f0f13;padding:25px}.side h4{font-family:"Playfair Display";font-size:22px;margin:8px 0 15px}.side p{color:#aaa197;font-size:11px;line-height:1.8}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#514a40;border:1px solid #514a40}.timebox{background:#101015;padding:24px}.timebox b{font-family:"Playfair Display";font-size:24px;display:block;margin-bottom:10px}.timebox p{color:#aaa197;font-size:10px;line-height:1.7}
+.realworld{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.real{border:1px solid #514a40;padding:28px;background:#101015}.real h3{font-family:"Playfair Display";font-size:28px;margin:8px 0 15px}.real p{color:#aaa197;font-size:11px;line-height:1.8}.chain{font-size:12px;color:var(--gold);line-height:2.2}
+.source{font-size:9px;color:#777067;margin-top:18px;line-height:1.7}.source a{text-decoration:underline}
+@media(max-width:850px){.article-grid,.realworld{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap top"><span>VOL. 01 — 02 OCTOBER 2026</span><span>FINANCE • ECONOMICS • POWER</span></div>
+<nav><div class="wrap navin"><a class="brand" href="#">MONEY <span>&</span> MATTE</a><div class="links"><a href="#world">World</a><a href="#markets">Markets</a><a href="#everyday">Everyday</a><a href="#learn">Learn</a></div></div></nav>
+<main>
+<section class="wrap hero" style="border-top:0"><div><div class="kicker">The world, through the lens of money.</div><h1>Money.<br><em>Power.</em><br>Everything.</h1><p>Markets don't live on a screen. They shape oil prices, EMIs, currencies, companies, jobs and the price of the coffee in your hand. MONEY & MATTE follows the chain.</p><a class="cta" href="#world">Enter the ledger ↓</a></div><div class="orb"><div class="ring"></div><div class="bat" aria-label="abstract bat silhouette"></div><div class="stamp">NOIR • MACRO • MARKETS</div></div></section>
+<div class="ticker"><div class="wrap"><span>BRICS • 11 MEMBERS</span><span>G7 • ÉVIAN 2026</span><span>RBI REPO • 5.25%</span><span>USD/INR • ₹96.49</span><span>INDIA GDP • 7.8%</span><span>US 10Y • 5.24%</span></div></div>
+<section id="world"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">01 / WORLD & POWER</div><h2>The blocs behind the headlines.</h2></div><div class="note">BRICS held its 18th summit in New Delhi on 12–13 September; the G7 met in Évian on 16–17 June. The interesting question is not “who wins?” but how trade, finance, energy, technology and institutions translate into influence.</div></div>
+<div class="compare"><div class="comparetop"><h3>BRICS+ vs G7</h3><div class="switch">
+<button class="pill active" data-tab="economy" type="button" aria-selected="true">ECONOMY</button>
+<button class="pill" data-tab="people" type="button" aria-selected="false">PEOPLE</button>
+<button class="pill" data-tab="trade" type="button" aria-selected="false">TRADE</button>
+</div></div>
+
+<div class="compare-panel" id="economy-panel">
+<div class="bars">
+<div class="barrow"><span>BRICS population</span><div class="track"><div class="fill" style="--w:99%"></div></div><div class="metric">~49.5%*</div></div>
+<div class="barrow"><span>BRICS GDP — PPP</span><div class="track"><div class="fill" style="--w:90%"></div></div><div class="metric">~45%*</div></div>
+<div class="barrow"><span>BRICS global trade</span><div class="track"><div class="fill alt" style="--w:52%"></div></div><div class="metric">~26%*</div></div>
+</div>
+<p style="font-size:10px;color:#665c4d;margin-top:25px">These figures are contextual BRICS shares reported by official/industry sources; they are not a single measure of economic power.</p>
+</div>
+
+<div class="compare-panel" id="people-panel" style="display:none">
+<div class="bars">
+<div class="barrow"><span>BRICS</span><div class="track"><div class="fill" style="--w:99%"></div></div><div class="metric">~49.5%*</div></div>
+<div class="barrow"><span>G7</span><div class="track"><div class="fill alt" style="--w:9%"></div></div><div class="metric">~9%*</div></div>
+</div>
+<p style="font-size:11px;color:#665c4d;margin-top:25px"><b>What this means:</b> BRICS represents roughly half of the world's population, while the seven G7 countries represent a much smaller share. A larger population can mean a larger consumer market and labour pool, but it does not automatically mean higher income per person or greater financial-market depth.</p>
+</div>
+
+<div class="compare-panel" id="trade-panel" style="display:none">
+<div class="bars">
+<div class="barrow"><span>BRICS share</span><div class="track"><div class="fill" style="--w:52%"></div></div><div class="metric">~26%*</div></div>
+<div class="barrow"><span>Rest of world</span><div class="track"><div class="fill alt" style="--w:100%"></div></div><div class="metric">~74%*</div></div>
+</div>
+<p style="font-size:11px;color:#665c4d;margin-top:25px"><b>What this means:</b> BRICS countries account for a significant share of global trade. The more interesting story is what they trade: energy, manufactured goods, food, commodities, technology and intermediate inputs that move through global supply chains.</p>
+</div><p style="font-size:10px;color:#665c4d;margin-top:25px">*BRICS figures use official/industry estimates with different denominators and definitions. These are contextual shares, not a single “power score.” Sources: Government of India; EY India, Sept. 2026.</p></div>
+<div class="cards" style="margin-top:18px"><article class="card"><span class="tag">THE 2026 BRICS SUMMIT</span><h3>New Delhi became the stage.</h3><p>India’s 2026 chairship culminated in the 12–13 September summit. The declaration emphasized economic and financial cooperation, resilient global value chains, innovation, sustainability and reform of multilateral institutions.</p><a class="arrow" href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2309505" target="_blank">READ SOURCE ↗</a></article>
+<article class="card"><span class="tag">THE G7</span><h3>Seven economies, one table.</h3><p>The June 2026 Évian summit produced nine declarations covering geopolitical crises, macroeconomic imbalances, resilient growth, critical-material supply chains and emerging technologies.</p><a class="arrow" href="https://www.consilium.europa.eu/en/meetings/international-summit/2026/06/15-17/" target="_blank">READ SOURCE ↗</a></article>
+<article class="card"><span class="tag">THE QUESTION</span><h3>What is “economic power”?</h3><p>GDP is only one lens. Population, trade, financial depth, currencies, energy, technology and institutional reach tell different parts of the story.</p><a class="arrow" href="#learn">UNPACK IT ↓</a></article></div></div>
+<div class="realworld" style="margin-top:18px">
+<article class="real"><span class="tag">BRICS</span><h3>What does it actually mean?</h3><p>Think of BRICS as a forum where major emerging economies coordinate on areas such as trade, finance, development and global governance. It does not have one central bank, one currency or one government.</p><div class="chain">More cooperation → more trade links → more investment channels → potentially less dependence on a single market</div></article>
+<article class="real"><span class="tag">G7</span><h3>What does it actually mean?</h3><p>The G7 is an informal group of advanced economies. It does not create laws for the whole world. Its importance comes from the size of its economies, financial markets, technology companies and international relationships.</p><div class="chain">Policy coordination → markets react → companies adjust → supply chains change</div></article>
+</div></div></section>
+<section id="markets"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">02 / THE MARKET ROOM</div><h2>Numbers with consequences.</h2></div><div class="note">A compact snapshot of selected Indian and global indicators. Values are dated; this is not a live trading terminal.</div></div>
+<div class="dashboard"><div class="stat"><small>RBI REPO RATE · AUG 2026</small><b>5.25%</b><span class="up">NEXT MPC: 5–7 OCT</span></div><div class="stat"><small>USD / INR · 02 OCT</small><b>₹96.49</b><span class="down">WEAKER RUPEE</span></div><div class="stat"><small>INDIA REAL GDP · Q1 FY27</small><b>7.8%</b><span class="up">YoY</span></div><div class="stat"><small>US 10Y TREASURY · OCT 2</small><b>5.24%</b><span class="down">5.34% THURSDAY HIGH</span></div></div>
+<div class="article-grid" style="margin-top:18px">
+<article class="feature"><span class="tag">THE BIG CHAIN · INDIA</span><h3>Why is ₹96 per dollar such a big deal?</h3><p>The rupee moved to around ₹96 per dollar as oil prices rose and global bond yields climbed. India imports most of its crude oil, so a weaker rupee makes each barrel more expensive in rupee terms.</p><p><b style="color:var(--paper)">The simple chain:</b></p><div class="chain">Oil ↑ → import bill ↑ → demand for dollars ↑ → rupee pressure → imported inflation risk</div><p>This does not mean every price jumps immediately. Companies can hedge, absorb some costs or change prices at different speeds. But the exchange rate matters because energy touches transport, manufacturing and many other parts of the economy.</p><div class="source">Reuters, 1 Oct 2026. <a href="https://www.reuters.com/world/india/rupee-weaken-oil-us-yields-weigh-fading-fed-hike-bets-offer-no-relief-2026-10-01/" target="_blank">Read report ↗</a></div></article>
+<div class="side"><span class="tag">WHAT TO WATCH</span><h4>RBI: 5.25% and counting</h4><p>The repo rate was held at 5.25% in August. The October 5–7 meeting is now a major market event because inflation has broadened while growth remains strong.</p><p>A Reuters poll published September 28 found about 60% of economists expected a 25-basis-point increase to 5.50%. That is a poll result, not a guaranteed outcome.</p><div class="source"><a href="https://www.reuters.com/world/india/rbi-raise-interest-rates-550-october-inflation-broadens-2026-09-28/" target="_blank">Reuters poll ↗</a></div></div></div>
+<div class="cards" style="margin-top:18px"><article class="card"><span class="tag">RATES</span><h3>The cost of money is back in the room.</h3><p>The US 10-year Treasury briefly reached 5.34% on 1 October, its highest since 2002, before retreating to around 5.24% on 2 October. Reuters linked the broader bond selloff to inflation, oil and government-debt concerns.</p></article><article class="card"><span class="tag">INDIA</span><h3>Strong growth. A harder rate question.</h3><p>The latest official estimate shows 7.8% real GDP growth in Q1 FY2026-27. The repo rate is 5.25%, and the October 5–7 MPC meeting is approaching; the policy debate depends on the inflation and growth data available at that time.</p></article><article class="card"><span class="tag">FOLLOW THE MONEY</span><h3>Oil → inflation → rates.</h3><p>Brent has moved above $100 amid renewed geopolitical and supply concerns. Higher energy costs can pressure India’s import bill and rupee, lift inflation risks and complicate the RBI’s rate decision.</p></article></div></div></section>
+<section><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">03 / THE COMMODITY BOARD</div><h2>Four indicators to watch.</h2></div><div class="note">Oil, gold and bonds look unrelated. They are connected through inflation, interest rates, currencies and risk.</div></div>
+<div class="timeline">
+<div class="timebox"><span class="tag">OIL</span><b>$100+</b><p>Brent moved above $100 as supply concerns intensified. For India, oil matters because crude imports are a major dollar demand channel.</p></div>
+<div class="timebox"><span class="tag">GOLD</span><b>~$4,188</b><p>Gold remained near historic highs but came under pressure from a stronger dollar and higher Treasury yields.</p></div>
+<div class="timebox"><span class="tag">US 10Y</span><b>5.24%</b><p>The benchmark yield briefly reached 5.34%, its highest since 2002, before easing. Higher yields can raise the global cost of capital.</p></div>
+<div class="timebox"><span class="tag">INDIA 10Y</span><b>7.21%</b><p>India's benchmark 10-year yield also climbed to a two-year high, showing that global rate moves can travel into local borrowing costs.</p></div>
+</div>
+<div class="realworld" style="margin-top:18px">
+<article class="real"><span class="tag">FOLLOW OIL</span><h3>Why should a student care?</h3><p>Oil is not just petrol. It affects transport, logistics, chemicals, plastics, aviation and many manufactured goods. If energy stays expensive, businesses have to decide whether to absorb the cost or pass it on.</p></article>
+<article class="real"><span class="tag">FOLLOW BONDS</span><h3>Why does a bond yield matter?</h3><p>A government bond yield is a reference price for borrowing. When yields rise, new debt generally becomes more expensive. Corporate borrowing and valuation models can also feel the effect.</p></article>
+</div></div></section>
+<section id="everyday"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">04 / THE DOMINO EFFECT</div><h2>One number changes. The world adjusts.</h2></div><div class="note">Financial markets are connected. A move in rates, oil or currencies can travel through banks, companies and households before it reaches everyday life.</div></div>
+<style>
+.domino-wrap{display:grid;grid-template-columns:1.5fr .75fr;gap:22px;align-items:stretch}
+.domino-board{border:1px solid #514a40;background:#0e0e12;padding:28px;position:relative;overflow:hidden}
+.domino-board:before{content:"";position:absolute;inset:14px;border:1px solid #292721;pointer-events:none}
+.domino-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:center;position:relative;z-index:1}
+.domino{min-height:150px;border:1px solid #514a40;background:linear-gradient(145deg,#15151a,#0b0b0d);padding:20px 14px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:.22s ease;position:relative}
+.domino:hover,.domino.active{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.domino.active:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold)}
+.domino .num{font-size:9px;color:var(--muted);letter-spacing:.18em}.domino strong{font-family:"Playfair Display";font-size:24px;line-height:1.05}.domino span{font-size:9px;color:#8f877c;line-height:1.5}
+.domino-arrow{color:var(--gold);font-size:20px;text-align:center}
+.domino-chain{margin-top:22px;border-top:1px solid #3c372f;padding-top:18px;color:#b9afa2;font-size:11px;line-height:2;text-align:center;letter-spacing:.03em}
+.ripple{border:1px solid #514a40;background:#101015;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.ripple .big{font-family:"Playfair Display";font-size:55px;color:var(--gold);line-height:.95;margin:14px 0}
+.ripple h3{font-family:"Playfair Display";font-size:29px;margin:0 0 12px}.ripple p{color:#aaa197;font-size:11px;line-height:1.8}.ripple .mini{border-top:1px solid #514a40;padding-top:16px;color:#b8aea1;font-size:10px;line-height:1.7}
+.domino-explain{margin-top:18px;border-left:2px solid var(--gold);background:#111115;padding:20px 22px;min-height:100px;transition:opacity .15s ease,transform .15s ease}.domino-explain.flash{animation:dominoFlash .35s ease}@keyframes dominoFlash{0%{opacity:.35;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.domino-wrap{grid-template-columns:1fr}.domino-flow{grid-template-columns:1fr}.domino-arrow{transform:rotate(90deg);height:20px}.domino{min-height:125px}}
+</style>
+<div class="domino-wrap">
+<div class="domino-board">
+<div class="domino-flow">
+<button class="domino active" type="button" data-step="01" data-title="Rates rise" data-big="+50 BPS" data-text="A higher policy rate raises the short-term cost of money. Markets immediately reassess the path for borrowing, bonds and other assets."><span class="num">01 · CENTRAL BANK</span><strong>RATES ↑</strong><span>Policy rate changes</span></button>
+<div class="domino-arrow">→</div>
+<button class="domino" type="button" data-step="02" data-title="Bond yields move" data-big="YIELDS ↑" data-text="As investors demand higher returns, market yields can rise and existing bond prices can fall. The effect travels beyond government debt into valuation and funding costs."><span class="num">02 · BOND MARKET</span><strong>BONDS</strong><span>Yields & prices react</span></button>
+<div class="domino-arrow">→</div>
+<button class="domino" type="button" data-step="03" data-title="Borrowing gets repriced" data-big="LOANS ↑" data-text="Banks price loans using funding costs, benchmarks, credit risk and competition. Higher market rates can therefore feed into borrowing costs, depending on the product and reset mechanism."><span class="num">03 · BANKS</span><strong>LOANS</strong><span>Funding reaches borrowers</span></button>
+<div class="domino-arrow">→</div>
+<button class="domino" type="button" data-step="04" data-title="Households adjust" data-big="EMI ↕" data-text="Borrowers may face higher interest expense while savers can receive better deposit returns. Households may change spending, saving or investment decisions."><span class="num">04 · HOUSEHOLDS</span><strong>SPENDING</strong><span>Everyday decisions change</span></button>
+</div>
+<div class="domino-chain">RATES → BONDS → BANKS → HOUSEHOLDS → COMPANIES → MARKETS</div>
+<div class="domino-explain" id="dominoExplain"><span class="tag" id="dominoStep">01 · CENTRAL BANK</span><h3 id="dominoTitle" style="font-family:'Playfair Display';font-size:27px;margin:8px 0">Rates rise</h3><p id="dominoText" style="color:#aaa197;font-size:11px;line-height:1.8;margin:0">A higher policy rate raises the short-term cost of money. Markets immediately reassess the path for borrowing, bonds and other assets.</p></div>
+</div>
+<div class="ripple"><div><span class="tag">REAL WORLD</span><div class="big" id="dominoBig">+50 BPS</div><h3>Watch the ripple.</h3><p id="dominoSide">A small change in the cost of money can alter decisions far beyond the central bank.</p></div><div class="mini"><b style="color:var(--paper)">The key idea</b><br>Financial variables are transmission mechanisms. The interesting question is not only what moved, but where that move goes next.</div></div>
+</div></div></section>
+<section id="learn"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">05 / THE BLACKBOARD</div><h2>Finance, without the fog.</h2></div><div class="note">Short visual primers. No textbook required.</div></div>
+<div class="cards"><article class="card"><span class="tag">60 SEC</span><h3>Duration</h3><p>Think: “How sensitive is a bond's price to a change in yields?” Longer duration generally means greater price sensitivity.</p></article><article class="card"><span class="tag">60 SEC</span><h3>Working Capital</h3><p>Cash tied up in receivables and inventory, less operating payables. The timing of cash can matter as much as accounting profit.</p></article><article class="card"><span class="tag">60 SEC</span><h3>Valuation</h3><p>A business is worth the value of the cash flows investors expect, adjusted for risk and time. Multiples provide a market shortcut.</p></article><article class="card"><span class="tag">60 SEC</span><h3>FX</h3><p>When ₹ weakens against $, dollar-priced imports become more expensive in rupees, all else equal.</p></article><article class="card"><span class="tag">60 SEC</span><h3>Capital Structure</h3><p>Debt and equity fund a company. Debt can amplify returns and risk because interest and principal obligations sit ahead of equity.</p></article><article class="card"><span class="tag">60 SEC</span><h3>Inflation</h3><p>A sustained rise in the general price level. It changes purchasing power, wage negotiations, margins and monetary policy.</p></article></div></div></section>
+<section><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">06 / THE NIGHT EDIT</div><h2>What moved the world today?</h2></div><div class="note">02 October 2026 — selected developments, dated and sourced.</div></div>
+<div class="cards">
+<article class="card"><span class="tag">BONDS</span><h3>5.34% → 5.24%</h3><p>The US 10-year Treasury touched a 24-year high near 5.34% on Thursday before easing. Rising yields are feeding into global borrowing costs and asset valuations.</p><a class="arrow" href="https://www.reuters.com/business/finance/why-are-world-bond-markets-selling-off-again-2026-10-01/" target="_blank">REUTERS ↗</a></article>
+<article class="card"><span class="tag">OIL / FX</span><h3>Brent stays above $100</h3><p>Oil remains elevated as geopolitical and supply concerns persist. India’s rupee was around ₹96.49 per dollar on 2 October, increasing the rupee cost of dollar-priced imports.</p><a class="arrow" href="https://www.reuters.com/world/china/global-markets-wrapup-1-2026-10-02/" target="_blank">MARKETS ↗</a></article>
+<article class="card"><span class="tag">GOLD</span><h3>$4,188 spot</h3><p>Gold was around $4,188/oz on 2 October and headed for a second weekly decline as a stronger dollar and higher Treasury yields reduced its appeal.</p><a class="arrow" href="https://www.reuters.com/world/india/gold-slips-before-us-payrolls-data-set-second-week-loss-2026-10-02/" target="_blank">REUTERS ↗</a></article>
+</div></div></section>
+<section><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">07 / THE MATTE</div><h2>What should you watch now?</h2></div><div class="note">The site's editorial radar — topics that connect markets to the real economy.</div></div>
+<div class="cards"><article class="card"><span class="tag">GLOBAL</span><h3>BRICS & the architecture of trade</h3><p>The September New Delhi declaration highlights resilient global value chains, intra-BRICS trade facilitation, connectivity and the 2026–2030 GVC Action Plan.</p></article><article class="card"><span class="tag">INDIA</span><h3>RBI’s October decision</h3><p>The MPC meets 5–7 October. The repo is 5.25%; inflation pressures have broadened, while growth remains strong. Market economists are divided over the size and timing of any hike.</p></article><article class="card"><span class="tag">MARKETS</span><h3>The bond market’s warning light</h3><p>The US 10-year briefly hit 5.34%, while India’s 10-year yield reached 7.21% on 1 October. Higher sovereign yields can raise financing costs across the economy.</p></article></div></div></section>
+</main>
+<footer><div class="wrap"><div class="footbrand">MONEY & MATTE</div><p>The world, through the lens of money.</p><p>Data and events are dated and sourced. Market figures are snapshots, not live quotes. MONEY & MATTE is an educational/editorial project, not investment advice.</p><p>© 2026 MONEY & MATTE</p></div></footer>
+<script>
+(function(){
+  // BRICS / G7 comparison tabs
+  const tabButtons = Array.from(document.querySelectorAll('.pill[data-tab]'));
+  const tabPanels = Array.from(document.querySelectorAll('.compare-panel[id$="-panel"]'));
+  function activateTab(name){
+    tabButtons.forEach(btn => {
+      const active = btn.dataset.tab === name;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    tabPanels.forEach(panel => {
+      const active = panel.id === name + '-panel';
+      panel.hidden = !active;
+      panel.style.display = active ? 'block' : 'none';
+    });
+  }
+  if(tabButtons.length && tabPanels.length){
+    tabButtons.forEach(btn => {
+      btn.type = 'button';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        activateTab(this.dataset.tab);
+      });
+      btn.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          activateTab(this.dataset.tab);
+        }
+      });
+    });
+    activateTab((document.querySelector('.pill[data-tab].active') || tabButtons[0]).dataset.tab);
+  }
+
+  const dominoes = Array.from(document.querySelectorAll('.domino'));
+  const explain = document.getElementById('dominoExplain');
+  const step = document.getElementById('dominoStep');
+  const title = document.getElementById('dominoTitle');
+  const text = document.getElementById('dominoText');
+  const big = document.getElementById('dominoBig');
+  const side = document.getElementById('dominoSide');
+  if(dominoes.length && explain && step && title && text && big && side){
+    function activate(card){
+      dominoes.forEach(d=>d.classList.remove('active'));
+      card.classList.add('active');
+      step.textContent = card.dataset.step + ' · ' + card.querySelector('.num').textContent.split('·')[1].trim();
+      title.textContent = card.dataset.title;
+      text.textContent = card.dataset.text;
+      big.textContent = card.dataset.big;
+      side.textContent = card.dataset.text;
+      explain.classList.remove('flash');
+      void explain.offsetWidth;
+      explain.classList.add('flash');
+    }
+    dominoes.forEach(card=>card.addEventListener('click',()=>activate(card)));
+    dominoes.forEach(card=>card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(card)}}));
+  }
+})();
+</script>
+</body></html>
